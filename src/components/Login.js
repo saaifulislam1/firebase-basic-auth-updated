@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/UserContext";
 
 function Login() {
   const {signIn} = useContext(AuthContext);
+  const navigate= useNavigate()
 
 
 
@@ -17,6 +19,7 @@ function Login() {
       // Signed in 
       const user = result.user;
       console.log(user,'log in success')
+      navigate('/')
       // ...
     })
     .catch((error) => {
